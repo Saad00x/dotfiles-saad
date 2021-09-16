@@ -1,0 +1,145 @@
+[colors]
+background = #282828
+foreground = #ebdbb2
+foreground-alt = #555
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+[bar/nord-dark]
+width = 100%
+height = 25
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 
+border-color = #00000000
+
+padding-left = 1
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = Fira Code Nerd Font:pixelsize=10;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = siji:pixelsize=10;1
+
+modules-left =bspwm
+modules-center = 
+modules-right = pulseaudio filesystem wlan date
+
+tray-position = center
+tray-padding = 
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+wm-restack = bspwm
+
+enable-ipc = true
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+mount-0 = /
+label-mounted =  %free%
+label-mounted-underline = #928374
+
+[module/bspwm]
+type = internal/bspwm
+
+format = <label-state>
+format-background = ${colors.background}
+format-foreground = ${colors.foreground}
+
+label-focused = %icon%
+label-focused-background = 
+label-focused-underline= #928374
+label-focused-padding = 2
+
+label-occupied = %icon%
+label-occupied-padding = 2
+
+label-urgent = %icon%!
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+label-empty = %icon%
+label-empty-foreground = ${colors.foreground}
+label-empty-padding = 2
+
+ws-icon-0 = I;
+ws-icon-1 = II;
+ws-icon-2 = III;
+ws-icon-3 = IV;
+ws-icon-4 = V;
+
+[module/date]
+type = internal/date
+interval = 5
+
+date =
+date-alt = " %Y-%m-%d"
+
+time = %H:%M
+time-alt = %H:%M:%S
+
+format-prefix = 
+format-underline = #928374
+
+label =%date% %time%
+
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <label-volume> <bar-volume>
+label-volume = 
+label-volume-foreground = ${root.foreground}
+
+label-muted = 
+label-muted-foreground = #666
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #928374
+bar-volume-foreground-1 = #928374
+bar-volume-foreground-2 = #928374
+bar-volume-foreground-3 = #928374
+bar-volume-foreground-4 = #928374
+bar-volume-foreground-5 = #928374
+bar-volume-foreground-6 = #928374
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/wlan]
+type = internal/network
+interface = wlan0
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+format-connected-underline = #928374
+label-connected = %essid%
+
+format-disconnected = 睊
+ramp-signal-0 = 直
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini
+
