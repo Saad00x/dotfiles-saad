@@ -1,0 +1,11 @@
+[module/mpd]
+type = internal/mpd
+fomrat-online = <toggle> <label-song>
+format-online-background = 
+format-online-foreground = ${color.FOREGROUND}
+format-online-padding = 1
+icon-play = 
+icon-pause = 
+
+label-song-maxlen = 50
+label-song-ellipsis= true

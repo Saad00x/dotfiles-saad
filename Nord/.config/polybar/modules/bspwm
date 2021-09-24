@@ -1,0 +1,34 @@
+
+[module/bspwm]
+type = internal/bspwm
+
+pin-workspaces = true
+inline-mode = false
+
+enable-click = true
+enable-scroll = true
+reverse-scroll = true
+
+format = <label-state>
+
+label-monitor = %name%
+
+label-focused = %name%
+label-focused-foreground = ${color.BACKGROUND}
+label-focused-background = ${color.BLUE}
+label-focused-padding = 1
+
+label-occupied = %name%
+label-occupied-padding = 1
+
+label-urgent = %name%
+label-urgent-foreground = ${color.BACKGROUND}
+label-urgent-background = ${color.RED}
+label-urgent-padding = 1
+
+label-empty = %name%
+label-empty-foreground = ${color.FOREGROUND}
+label-empty-padding = 1
+
+label-separator = " "
+label-separator-padding = 0
